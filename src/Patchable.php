@@ -57,42 +57,6 @@ trait Patchable
     }
 
     /**
-     * Store relationship
-     *
-     * @param string $relationship
-     * @param array $data
-     * @return void
-     */
-    public function storeRelationship(string $relationship, array $data)
-    {
-        $this->patchRelationships($relationship, 'store', $data);
-    }
-
-    /**
-     * Update relationship
-     *
-     * @param string $relationship
-     * @param array $data
-     * @return void
-     */
-    public function updateRelationship(string $relationship, array $data)
-    {
-        $this->patchRelationships($relationship, 'update', $data);
-    }
-
-    /**
-     * Destroy relationship
-     *
-     * @param string $relationship
-     * @param array $data
-     * @return void
-     */
-    public function destroyRelationship(string $relationship, array $data)
-    {
-        $this->patchRelationships($relationshipName, 'destroy', $data);
-    }
-
-    /**
      * Verify model based on id if present and type
      */
     protected function verifyModel(array $data)
