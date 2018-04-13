@@ -67,10 +67,10 @@ trait Patchable
             throw new ConflictHttpException('Model id does not match');
         }
 
-        $namespace = config('patchable.namespace', '\App\Models');
-        $separatorCount = count(explode('\\', $namespace));
+        $namespace = config('patchable.namespace', '\App');
+        $separatorCount = count(explode('\\', trim($namespace, '\\')));
 
-        $className = array_slice(explode('\\', get_class($this)), $separatorCount);
+        $className = array_slice(explode('\\', trim(get_class($this), '\\')), $separatorCount);
         if (studly_case(implode('_', $className)) != studly_case($data['type'])) {
             throw new ConflictHttpException('Model type does not match');
         }
